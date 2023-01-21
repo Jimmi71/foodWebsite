@@ -10,10 +10,10 @@ const getLocalCartData = () => {
   }
 
 const cartQuantity = () => {
-    let cartData = localStorage.getItem("cartQuantity")
-    if(cartData){
+    let cartQuantity = localStorage.getItem("cartQuantity")
+    if(cartQuantity){
       return JSON.parse(localStorage.getItem("cartQuantity"))
-    }else if(cartData <= 0){
+    }else if(cartQuantity <= 0 || cartQuantity === []){
       return []
     }
   }
