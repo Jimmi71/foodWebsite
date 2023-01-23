@@ -14,7 +14,7 @@ const Cart = () => {
       localStorage.setItem("cartData", JSON.stringify(cartData)),
       localStorage.setItem("cartQuantity", JSON.stringify(cartQuantity))
       )
-  }, [cartData])
+  }, [cartData, cartQuantity])
 
   return (
     <>

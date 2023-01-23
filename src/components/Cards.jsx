@@ -8,11 +8,19 @@ import { addToCart } from '../features/CartSlice';
 const Cards = () => {
   const data = useSelector(state => state.card.value)
   const cartData = useSelector((state) => state.cart.cartValue)
+  const cartQuantity = useSelector((state) => state.cart.quantity)
   const dispatch = useDispatch();
 
   useEffect(() => {
     return localStorage.setItem("data", JSON.stringify(data))
   }, [data])
+
+  useEffect(() => {
+    return (
+      localStorage.setItem("cartData", JSON.stringify(cartData)),
+      localStorage.setItem("cartQuantity", JSON.stringify(cartQuantity))
+      )
+  }, [cartData, cartQuantity])
 
 
   return (
